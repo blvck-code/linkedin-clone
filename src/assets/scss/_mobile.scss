@@ -1,0 +1,11 @@
+@media screen and(max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .homepage {
+    .homepage__wrapper {
+      grid-template-columns: 100%;
+    }
+  }
+}
