@@ -2,15 +2,16 @@ import React, { useRef, useState } from "react";
 // import img from "../../assets/images/img.jpg";
 
 const CreatePostModal = ({ data }) => {
+  const [img, setImg] = useState(null);
+
   const clickOutside = (e) => {
-    console.log(e.target);
     if (e.target === document.querySelector(".modal")) {
       document.querySelector(".modal").style.display = "none";
     } else if (e.target === document.querySelector("#createPost")) {
       document.getElementById("createPost").style.display = "none";
     }
+    // setImg(null);
   };
-  const [img, setImg] = useState(null);
 
   window.addEventListener("click", clickOutside);
 
@@ -37,9 +38,10 @@ const CreatePostModal = ({ data }) => {
         <div className="createPost__title">
           <h2>Create a post</h2>
           <i
-            onClick={() =>
-              (document.getElementById("createPost").style.display = "none")
-            }
+            onClick={() => {
+              document.getElementById("createPost").style.display = "none";
+              // setImg("");
+            }}
             className="fa fa-close"
           />
         </div>

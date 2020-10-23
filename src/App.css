@@ -173,11 +173,11 @@
         max-height: 400px;
         border-radius: 4px;
         width: 100%;
-        -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
         position: relative; }
         .modal .createPost form .createPost__img img {
           max-width: 100%;
+          -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
           width: auto;
           cursor: pointer;
           border-radius: 4px;
