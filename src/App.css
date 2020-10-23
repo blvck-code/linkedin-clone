@@ -94,7 +94,7 @@
         transform: scale(1.5); }
   .modal .createPost {
     background: #f4f4f4;
-    width: 60%;
+    width: 50%;
     margin: 10% auto;
     -webkit-transform: translateY(-20%);
     -ms-transform: translateY(-20%);
@@ -662,7 +662,7 @@ a {
       position: relative;
       width: 100%; }
       .homepage .homepage__wrapper .post__wrapper .post__item {
-        margin: 1rem 0;
+        margin: 0.5rem 0;
         width: 100%;
         background: #fff;
         padding: 10px;
