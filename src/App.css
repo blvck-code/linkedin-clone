@@ -46,9 +46,9 @@
   background: #b9b6b6; }
 
 .modal {
-  display: none;
   position: fixed;
   z-index: 1000;
+  display: none;
   left: 0;
   right: 0;
   -webkit-box-align: center;
@@ -62,13 +62,22 @@
   height: 100%;
   width: 100%;
   text-align: center;
-  overflow: auto;
+  overflow: hidden;
   background: rgba(0, 0, 0, 0.75); }
   .modal .imageModal {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     position: relative; }
+    .modal .imageModal img {
+      max-width: 60%;
+      min-width: 20%;
+      margin: 6rem auto 0; }
+      @media screen and (max-width: 768px) {
+        .modal .imageModal img {
+          margin-top: 8rem !important;
+          max-width: 90%;
+          min-width: 60%; } }
     .modal .imageModal .fa {
       position: absolute;
       color: #f4f4f4;
@@ -83,15 +92,82 @@
         -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
         transform: scale(1.5); }
-  .modal img {
-    max-width: 60%;
-    min-width: 20%;
-    margin: 6rem auto 0; }
-    @media screen and (max-width: 768px) {
-      .modal img {
-        margin-top: 8rem !important;
-        max-width: 90%;
-        min-width: 60%; } }
+  .modal .createPost {
+    background: #f4f4f4;
+    width: 48%;
+    margin: 20% auto;
+    -webkit-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    transform: translateY(-20%);
+    border-radius: 4px; }
+    .modal .createPost .createPost__title {
+      padding: 0.7rem 1.2rem;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      .modal .createPost .createPost__title h2 {
+        font-weight: 400;
+        color: #555;
+        font-size: 20px;
+        margin: 0;
+        line-height: 1; }
+      .modal .createPost .createPost__title .fa {
+        font-size: 1.3rem;
+        font-weight: 400;
+        cursor: pointer; }
+    .modal .createPost form {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding: 0rem 1.2rem;
+      margin: 0.5rem; }
+      .modal .createPost form textarea {
+        font-size: 1rem;
+        width: 100%;
+        padding: 0.7rem 0;
+        border: none;
+        outline: none;
+        height: 120px;
+        font-family: inherit;
+        letter-spacing: 0.7px;
+        background: none; }
+      .modal .createPost form .createPost__footer {
+        padding: 0.7rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between; }
+        .modal .createPost form .createPost__footer .createPost__icons {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex; }
+          .modal .createPost form .createPost__footer .createPost__icons i {
+            margin-right: 30px;
+            font-size: 1.3rem;
+            cursor: pointer; }
+            .modal .createPost form .createPost__footer .createPost__icons i:first-child, .modal .createPost form .createPost__footer .createPost__icons i:nth-child(3) {
+              color: #1093c8; }
+            .modal .createPost form .createPost__footer .createPost__icons i:nth-child(2) {
+              color: #b20ab2; }
+        .modal .createPost form .createPost__footer .btn {
+          color: #f4f4f4;
+          padding: 0.5rem 1rem !important; }
 
 nav {
   height: 50px;
