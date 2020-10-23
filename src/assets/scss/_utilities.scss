@@ -106,7 +106,7 @@
   .createPost {
     background: $lightBg;
     width: 48%;
-    margin: 20% auto;
+    margin: 10% auto;
     transform: translateY(-20%);
     border-radius: 4px;
 
@@ -146,7 +146,7 @@
         padding: 0.7rem 0;
         border: none;
         outline: none;
-        height: 120px;
+        height: auto;
         font-family: inherit;
         letter-spacing: 0.7px;
         background: none;
@@ -185,6 +185,37 @@
         .btn {
           color: $lightBg;
           padding: 0.5rem 1rem !important;
+        }
+      }
+
+      .createPost__img {
+        max-height: 400px;
+        width: 100%;
+        box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.7);
+        position: relative;
+
+        // .fa {
+        //   position: absolute;
+        //   top: 15px;
+        //   right: 15px;
+        //   transition: all 0.3s ease-in-out;
+        //   cursor: pointer;
+
+        //   &:hover {
+        //     transform: scale(1.3);
+        //   }
+        // }
+
+        img {
+          max-width: 100%;
+          width: auto;
+          cursor: pointer;
+          height: auto;
+          max-height: 400px;
+
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
     }

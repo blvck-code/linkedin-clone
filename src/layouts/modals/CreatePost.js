@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { connect } from "react-redux";
+import React, { useRef, useState } from "react";
+// import img from "../../assets/images/img.jpg";
 
 const CreatePostModal = ({ data }) => {
   const clickOutside = (e) => {
@@ -10,6 +10,7 @@ const CreatePostModal = ({ data }) => {
       document.getElementById("createPost").style.display = "none";
     }
   };
+  const [img, setImg] = useState(null);
 
   window.addEventListener("click", clickOutside);
 
@@ -21,15 +22,14 @@ const CreatePostModal = ({ data }) => {
     }
   };
 
-  //   const readURL = (e) => {
-  //     let reader = new FileReader();
-  //     reader.readAsDataURL(e.target.files[0]);
+  const readURL = (e) => {
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
 
-  //     reader.onload = (e) => {
-  //       setContactPic(e.target.result);
-  //       setForm({ ...form, ["contactPic"]: e.target.result });
-  //     };
-  //   };
+    reader.onload = (e) => {
+      setImg(e.target.result);
+    };
+  };
 
   return (
     <div className="modal" id="createPost">
@@ -50,12 +50,17 @@ const CreatePostModal = ({ data }) => {
             autoFocus="true"
             placeholder="What do you want to talk about?"
           />
+          {img && (
+            <div className="createPost__img">
+              <img onClick={choseImage} src={img} />
+            </div>
+          )}
           <div className="createPost__footer">
             <input
               type="file"
               accept="image/**"
               ref={imagePickerRef}
-              //   onChange={readURL}
+              onChange={readURL}
               style={{ display: "none" }}
             />
             <div className="createPost__icons">
@@ -63,6 +68,7 @@ const CreatePostModal = ({ data }) => {
               <i onClick={choseImage} className="fa fa-video-camera" />
               <i onClick={choseImage} className="fa fa-file-archive-o" />
             </div>
+
             <button className="btn btn-primary">Post</button>
           </div>
         </form>

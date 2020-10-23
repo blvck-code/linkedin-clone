@@ -95,7 +95,7 @@
   .modal .createPost {
     background: #f4f4f4;
     width: 48%;
-    margin: 20% auto;
+    margin: 10% auto;
     -webkit-transform: translateY(-20%);
     -ms-transform: translateY(-20%);
     transform: translateY(-20%);
@@ -138,7 +138,7 @@
         padding: 0.7rem 0;
         border: none;
         outline: none;
-        height: 120px;
+        height: auto;
         font-family: inherit;
         letter-spacing: 0.7px;
         background: none; }
@@ -168,6 +168,20 @@
         .modal .createPost form .createPost__footer .btn {
           color: #f4f4f4;
           padding: 0.5rem 1rem !important; }
+      .modal .createPost form .createPost__img {
+        max-height: 400px;
+        width: 100%;
+        -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+        position: relative; }
+        .modal .createPost form .createPost__img img {
+          max-width: 100%;
+          width: auto;
+          cursor: pointer;
+          height: auto;
+          max-height: 400px; }
+          .modal .createPost form .createPost__img img:hover {
+            opacity: 0.7; }
 
 nav {
   height: 50px;
@@ -837,4 +851,6 @@ footer {
     display: none; }
   .homepage .homepage__wrapper {
     -ms-grid-columns: 100%;
-    grid-template-columns: 100%; } }
+    grid-template-columns: 100%; }
+  .modal .createPost {
+    width: 70%; } }
