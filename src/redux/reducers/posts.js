@@ -5,6 +5,9 @@ import {
   LOGOUT_SUCCESS,
   DELETE_SUCCESS,
   SEARCH_POST,
+  CREATE_POSTS_LOADING,
+  CREATE_POSTS_LOAD_SUCCESS,
+  CREATE_POSTS_LOAD_ERROR,
 } from "../../constants/types";
 
 const initialState = {
@@ -90,6 +93,37 @@ export default function (state = initialState, { type, payload }) {
           loading: false,
           data: null,
           error: null,
+        },
+      };
+    case CREATE_POSTS_LOADING:
+      return {
+        ...state,
+        addPost: {
+          ...state.addPost,
+          loading: true,
+        },
+      };
+    case CREATE_POSTS_LOAD_SUCCESS:
+      return {
+        ...state,
+        addPost: {
+          ...state.addPost,
+          loading: false,
+          data: payload,
+        },
+        posts: {
+          ...state.posts,
+          loading: false,
+          data: [payload, ...state.posts.data],
+        },
+      };
+    case CREATE_POSTS_LOAD_ERROR:
+      return {
+        ...state,
+        addPost: {
+          ...state.addPost,
+          loading: false,
+          error: payload,
         },
       };
     default:

@@ -3,7 +3,6 @@ import img from "../../assets/images/img.jpg";
 
 const Image = () => {
   const clickOutside = (e) => {
-    console.log(e.target);
     if (e.target === document.querySelector(".modal")) {
       document.querySelector(".modal").style.display = "none";
     } else if (e.target === document.querySelector(".imageModal")) {

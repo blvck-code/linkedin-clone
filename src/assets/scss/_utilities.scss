@@ -105,7 +105,7 @@
 
   .createPost {
     background: $lightBg;
-    width: 48%;
+    width: 60%;
     margin: 10% auto;
     transform: translateY(-20%);
     border-radius: 4px;
@@ -211,6 +211,7 @@
           max-width: 100%;
           box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.7);
           width: auto;
+          object-fit: cover;
           cursor: pointer;
           border-radius: 4px;
           height: auto;

@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
+import { connect } from "react-redux";
+import { createPost } from "../../redux/actions/posts";
 // import img from "../../assets/images/img.jpg";
 
-const CreatePostModal = ({ data }) => {
+const CreatePostModal = ({ data, createPost }) => {
+  const [body, setBody] = useState("");
   const [img, setImg] = useState(null);
 
   const clickOutside = (e) => {
@@ -32,6 +35,16 @@ const CreatePostModal = ({ data }) => {
     };
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    createPost(body, img);
+    document.querySelector(".modal").style.display = "none";
+    document.getElementById("createPost").style.display = "none";
+    setBody("");
+    setImg(null);
+  };
+
   return (
     <div className="modal" id="createPost">
       <div className="createPost">
@@ -47,10 +60,12 @@ const CreatePostModal = ({ data }) => {
         </div>
         <div className="underline" />
 
-        <form>
+        <form onSubmit={onSubmit}>
           <textarea
             autoFocus="true"
             placeholder="What do you want to talk about?"
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
           />
           {img && (
             <div className="createPost__img">
@@ -79,4 +94,7 @@ const CreatePostModal = ({ data }) => {
   );
 };
 
-export default CreatePostModal;
+// const mapStateToProps = state => ({
+// })
+
+export default connect(null, { createPost })(CreatePostModal);
