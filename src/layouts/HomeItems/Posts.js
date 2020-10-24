@@ -3,6 +3,7 @@ import CreatePost from "./CreatePostSect";
 import { connect } from "react-redux";
 import { fetchPosts, deletePost } from "../../redux/actions/posts";
 import PostItem from "./PostItem";
+import PostPlaceholder from "../placeholders/PostPlaceholder";
 
 const Posts = ({
   auth,
@@ -27,21 +28,23 @@ const Posts = ({
 
       <div className="underline" />
 
-      {loading && <h2>Loading</h2>}
+      {loading && <PostPlaceholder />}
 
       {/* {!loading && data.length === 0 && <h2>No posts</h2>} */}
-      <div className="post__wrapper">
-        {currentPosts &&
-          currentPosts.map((post) => (
-            <PostItem
-              post={post}
-              auth={auth}
-              key={post.id}
-              imgModal={imgModal}
-              deletePost={deletePost}
-            />
-          ))}
-      </div>
+      {!loading && (
+        <div className="post__wrapper">
+          {currentPosts &&
+            currentPosts.map((post) => (
+              <PostItem
+                post={post}
+                auth={auth}
+                key={post.id}
+                imgModal={imgModal}
+                deletePost={deletePost}
+              />
+            ))}
+        </div>
+      )}
     </div>
   );
 };

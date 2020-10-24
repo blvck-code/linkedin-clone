@@ -4,6 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { fetchProfile } from "../../redux/actions/profiles";
 import img from "../../assets/images/default.png";
 import bgImg from "../../assets/images/bg.png";
+import ProfileSectPlaceholder from "../placeholders/ProfileSectPlaceholder";
 
 const ProfileSect = ({ fetchProfile, profile: { loading, data } }) => {
   useEffect(() => {
@@ -20,9 +21,9 @@ const ProfileSect = ({ fetchProfile, profile: { loading, data } }) => {
 
   return (
     <div className="homepage__profile hide-on-mobile">
-      {loading && <h1>loading</h1>}
+      {loading && <ProfileSectPlaceholder />}
 
-      {data && (
+      {!loading && data && (
         <div className="homepage__profile__content">
           <div className="homepage__profile__imgs">
             <div className="homepage__bg_pic">

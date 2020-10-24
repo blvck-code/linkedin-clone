@@ -284,11 +284,152 @@ nav {
         font-weight: 400;
         letter-spacing: 1px; }
 
-.plh-image {
-  width: 50px;
-  height: 50px;
-  background: #aaa;
-  border-radius: 50%; }
+.post-plc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 1rem 0; }
+  .post-plc .author__plc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-gap: 15px; }
+    .post-plc .author__plc .author__img__plc {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      background: #aaa;
+      -webkit-animation: pulse 1s infinite ease-in-out;
+      animation: pulse 1s infinite ease-in-out; }
+    .post-plc .author__plc .author__info__plc {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .post-plc .author__plc .author__info__plc .author__line__1 {
+        height: 20px;
+        width: 250px;
+        background: #aaa;
+        border-radius: 5px;
+        margin: 2px 0;
+        -webkit-animation: pulse 1s infinite ease-in-out;
+        animation: pulse 1s infinite ease-in-out; }
+      .post-plc .author__plc .author__info__plc .author__line__2 {
+        height: 20px;
+        width: 150px;
+        background: #aaa;
+        border-radius: 5px;
+        margin: 2px 0;
+        -webkit-animation: pulse 1s infinite ease-in-out;
+        animation: pulse 1s infinite ease-in-out; }
+      .post-plc .author__plc .author__info__plc .author__line__3 {
+        height: 20px;
+        width: 100px;
+        background: #aaa;
+        border-radius: 5px;
+        margin: 1px 0;
+        -webkit-animation: pulse 1s infinite ease-in-out;
+        animation: pulse 1s infinite ease-in-out; }
+  .post-plc .post__body {
+    height: 20px;
+    width: 100%;
+    background: #aaa;
+    border-radius: 5px;
+    margin-top: 1rem;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+    animation: pulse 1s infinite ease-in-out; }
+  .post-plc .post__img {
+    height: 250px;
+    width: 100%;
+    background: #aaa;
+    border-radius: 5px;
+    margin: 6px 0;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+    animation: pulse 1s infinite ease-in-out; }
+
+.profile_placeholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .profile_placeholder .profile__imgs__plc {
+    margin-bottom: 1rem; }
+    .profile_placeholder .profile__imgs__plc .bg__plc {
+      height: 100px;
+      width: 100%;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      background: rgba(165, 165, 165, 0.4); }
+    .profile_placeholder .profile__imgs__plc .dp__plc {
+      height: 100px;
+      width: 100px;
+      border: 1px solid #f4f4f4;
+      background: rgba(165, 165, 165, 0.8);
+      border-radius: 50%;
+      margin: -50px auto 0;
+      -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); }
+  .profile_placeholder .name__plc {
+    width: 200px;
+    height: 20px;
+    margin: 0 auto 1rem;
+    border-radius: 4px;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+    animation: pulse 1s infinite ease-in-out; }
+  .profile_placeholder .proffession__plc1 {
+    width: 150px;
+    height: 20px;
+    margin: 5px auto;
+    border-radius: 4px;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+    animation: pulse 1s infinite ease-in-out; }
+  .profile_placeholder .proffession__plc2 {
+    width: 180px;
+    height: 20px;
+    margin: 5px auto;
+    border-radius: 4px;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+    animation: pulse 1s infinite ease-in-out; }
+  .profile_placeholder .proffession__plc3 {
+    width: 90px;
+    height: 20px;
+    margin: 5px auto;
+    border-radius: 4px;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+    animation: pulse 1s infinite ease-in-out; }
+
+@-webkit-keyframes pulse {
+  0% {
+    background: rgba(165, 165, 165, 0.1); }
+  50% {
+    background: rgba(165, 165, 165, 0.3); }
+  0% {
+    background: rgba(165, 165, 165, 0.1); } }
+
+@keyframes pulse {
+  0% {
+    background: rgba(165, 165, 165, 0.1); }
+  50% {
+    background: rgba(165, 165, 165, 0.3); }
+  0% {
+    background: rgba(165, 165, 165, 0.1); } }
 
 * {
   margin: 0;
