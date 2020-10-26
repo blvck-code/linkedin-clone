@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "react-moment";
 import { useHistory } from "react-router-dom";
+import Update from "../modals/Update";
 
 const PostItem = ({ post, imgModal, auth, deletePost }) => {
   const history = useHistory();
+  const [update, setUpdate] = useState({});
 
   const userProfile = (url) => {
     history.push(`/profile/${url}`);
   };
 
+  const updateModal = (data) => {
+    document.getElementById("updatePost").style.display = "block";
+    // <Update data={update} />;
+    // document.getElementById("createPost").style.display = "block";
+    // document.querySelector("#imgModal img").setAttribute("src", image);
+    // return image;
+  };
+
   return (
     <div className="post__item">
+      <Update data={update} />
       <div className="author">
         <div className="author__dp">
           <img onClick={() => userProfile(post.profile)} src={post.dp} />
@@ -27,7 +38,14 @@ const PostItem = ({ post, imgModal, auth, deletePost }) => {
         </div>
         {post.profile === auth.slug && (
           <div className="post__btns">
-            <button className="btn btn-primary-outline">Edit</button>
+            <button
+              onClick={() => {
+                updateModal();
+                setUpdate(post);
+              }}
+              className="btn btn-primary-outline">
+              Edit
+            </button>
             <button
               onClick={() => deletePost(post.id)}
               className="btn btn-danger">
