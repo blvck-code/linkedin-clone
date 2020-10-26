@@ -14,8 +14,6 @@ const CreatePostModal = ({ data, createPost }) => {
     } else if (e.target === document.querySelector("#createPost")) {
       document.getElementById("createPost").style.display = "none";
     }
-    setBody("");
-    setImg(null);
   };
 
   window.addEventListener("click", clickOutside);
@@ -66,8 +64,6 @@ const CreatePostModal = ({ data, createPost }) => {
             <i
               onClick={() => {
                 document.getElementById("createPost").style.display = "none";
-                setBody("");
-                setImg(null);
               }}
               className="fa fa-close"
             />
