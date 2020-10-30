@@ -20,11 +20,11 @@ function App({ getUser }) {
     <Router>
       <Header />
       <Switch>
-        <PrivateRoute exact path="/" component={HomePageComponent} />
-        <PrivateRoute exact path="/profile/:slug" component={UserProfileComp} />
         <Route exact path="/login" component={LoginComponent} />
-        <Route exact path="/register" component={Register} />
         <Route exact path="/reset-password" component={ResetPassComponent} />
+        <Route exact path="/register" component={Register} />
+        <PrivateRoute exact path="/" component={HomePageComponent} />
+        <PrivateRoute exact path="/:slug" component={UserProfileComp} />
       </Switch>
     </Router>
   );

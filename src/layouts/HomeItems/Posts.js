@@ -38,7 +38,7 @@ const Posts = ({
               <PostItem
                 post={post}
                 auth={auth}
-                key={post.id}
+                key={post.slug}
                 imgModal={imgModal}
                 deletePost={deletePost}
               />

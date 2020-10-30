@@ -7,9 +7,9 @@ const PostItem = ({ post, imgModal, auth, deletePost }) => {
   const history = useHistory();
   const [update, setUpdate] = useState({});
 
-  const userProfile = (url) => {
-    history.push(`/profile/${url}`);
-  };
+  // const userProfile = (url) => {
+  //   history.push(`/${url}`);
+  // };
 
   const updateModal = (data) => {
     document.getElementById("updatePost").style.display = "block";
@@ -24,10 +24,12 @@ const PostItem = ({ post, imgModal, auth, deletePost }) => {
       <Update data={update} />
       <div className="author">
         <div className="author__dp">
-          <img onClick={() => userProfile(post.profile)} src={post.dp} />
+          <img onClick={() => history.push(`/${post.profile}`)} src={post.dp} />
         </div>
         <div className="author__info">
-          <h4 onClick={() => userProfile(post.profile)}>{post.author}</h4>
+          <h4 onClick={() => history.push(`/${post.profile}`)}>
+            {post.author}
+          </h4>
           <p>{post.profession}</p>
           <small className="date-posted">
             <Moment start="day" fromNow>
@@ -47,7 +49,7 @@ const PostItem = ({ post, imgModal, auth, deletePost }) => {
               Edit
             </button>
             <button
-              onClick={() => deletePost(post.id)}
+              onClick={() => deletePost(post.slug)}
               className="btn btn-danger">
               Delete
             </button>

@@ -12,10 +12,6 @@ const Header = ({ auth: { data }, logout, searchPost }) => {
 
   const history = useHistory();
 
-  const userProfile = (url) => {
-    history.push(`/profile/${url}`);
-  };
-
   const onChange = (e) => {
     setSearchValue(e.target.value);
 
@@ -65,7 +61,7 @@ const Header = ({ auth: { data }, logout, searchPost }) => {
           <div className="nav__img">
             {data.profile_pic ? (
               <img
-                onClick={() => userProfile(data.slug)}
+                onClick={() => history.push(`/${data.slug}`)}
                 src={data.profile_pic}
               />
             ) : (

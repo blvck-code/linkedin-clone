@@ -68,17 +68,22 @@
   height: 100%;
   width: 100%;
   text-align: center;
-  overflow: hidden;
+  // overflow: hidden;
+  overflow: auto;
   background: rgba(0, 0, 0, 0.75);
 
   .imageModal {
     display: flex;
     position: relative;
+    // overflow-y: scroll;
+    // overflow: auto;
 
     img {
       max-width: 60%;
       min-width: 20%;
-      margin: 6rem auto 0;
+      margin: 6rem auto 2rem;
+      // overflow-y: scroll;
+      // overflow: auto;
 
       @media screen and(max-width: 768px) {
         margin-top: 8rem !important;
@@ -89,7 +94,7 @@
     }
 
     .fa {
-      position: absolute;
+      position: fixed;
       color: $lightBg;
       font-size: 1.5rem;
       top: 3rem;

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Prompt } from "react-router-dom";
 import { createPost } from "../../redux/actions/posts";
@@ -7,7 +7,15 @@ import { createPost } from "../../redux/actions/posts";
 const UpdatePostModal = ({ data }) => {
   const [body, setBody] = useState("");
   const [img, setImg] = useState(null);
-  console.log(data);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (data) {
+        setBody(data.body);
+        setImg(data.img);
+      }
+    }, 600);
+  }, []);
 
   const clickOutside = (e) => {
     if (e.target === document.querySelector(".modal")) {
@@ -61,7 +69,7 @@ const UpdatePostModal = ({ data }) => {
       <div className="modal" id="updatePost">
         <div className="updatePost">
           <div className="updatePost__title">
-            <h2>Update a post</h2>
+            <h2>Update post</h2>
             <i
               onClick={() => {
                 document.getElementById("updatePost").style.display = "none";

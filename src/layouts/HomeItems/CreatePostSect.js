@@ -44,7 +44,7 @@ const CreatePost = ({ profile: { data } }) => {
 };
 
 const mapStateToProps = (state) => ({
-  profile: state.profileState.userProfile,
+  profile: state.profileState,
 });
 
 export default connect(mapStateToProps)(CreatePost);

@@ -15,10 +15,6 @@ const ProfileSect = ({ fetchProfile, profile: { loading, data } }) => {
 
   const history = useHistory();
 
-  const userProfile = (url) => {
-    history.push(`/profile/${url}`);
-  };
-
   return (
     <div className="homepage__profile hide-on-mobile">
       {loading && <ProfileSectPlaceholder />}
@@ -32,16 +28,18 @@ const ProfileSect = ({ fetchProfile, profile: { loading, data } }) => {
             <div className="homepage__profile_pic">
               {data.profile_pic ? (
                 <img
-                  onClick={() => userProfile(data.slug)}
+                  onClick={() => history.push(`/${data.slug}`)}
                   src={data.profile_pic}
                 />
               ) : (
-                <img onClick={() => userProfile(data.slug)} src={img} />
+                <img onClick={() => history.push(`/${data.slug}`)} src={img} />
               )}
             </div>
           </div>
           <div className="homepage__profile__info">
-            <h3>
+            <h3
+              onClick={() => history.push(`/${data.slug}`)}
+              style={{ cursor: "pointer" }}>
               {data.first_name} {data.last_name}
             </h3>
             <p>{data.headline}</p>
@@ -61,7 +59,7 @@ const ProfileSect = ({ fetchProfile, profile: { loading, data } }) => {
 };
 
 const mapStateToProps = (state) => ({
-  profile: state.profileState.userProfile,
+  profile: state.profileState,
 });
 
 export default connect(mapStateToProps, { fetchProfile })(ProfileSect);

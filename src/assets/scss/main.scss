@@ -625,8 +625,362 @@ a {
     .homepage__adverts {
       background: #fff;
       height: 80vh;
-      border: 1px solid #000;
-      // box-shadow: 0px 0px 5px 0px rgba($color: #000000, $alpha: 0.5);
+      // border: 1px solid #000;
+      border-radius: 2px;
+      padding: 20px;
+      box-shadow: 0px 0px 5px 0px rgba($color: #000000, $alpha: 0.5);
+    }
+  }
+}
+
+.profile__page {
+  background: $lightBg;
+  color: #181818;
+  width: 100vw;
+  margin: 0 !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .profile__wrapper {
+    width: 55%;
+    margin: 7% auto;
+
+    .profile__header {
+      background: #fff;
+      width: 100%;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+      box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.6);
+
+      .profile__imgs {
+        width: 100%;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+
+        .profile_bgImg {
+          height: 180px;
+          object-fit: cover;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+        }
+
+        .profile_edit {
+          // border: 1px solid #000;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 25px;
+
+          button {
+            color: $primaryColor;
+            border: 1px solid $primaryColor;
+            font-weight: normal;
+            margin-top: 10px;
+            font-size: 13px;
+            padding: 7px 1.5rem;
+
+            &:hover {
+              background: $primaryColor;
+              color: $lightBg;
+            }
+          }
+
+          .profile_userImg {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            border: 2px solid $lightBg;
+            border-radius: 50%;
+            margin-top: -50px;
+            box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.6);
+          }
+        }
+      }
+
+      .profile__info {
+        padding: 5px 40px;
+        display: grid;
+        grid-template-columns: 2.2fr 1fr;
+        grid-gap: 10px;
+        // border: 1px solid #000;
+
+        .profile__left {
+          // border: 1px solid #000;
+
+          h3 {
+            font-weight: 600;
+            letter-spacing: 0.9px;
+            margin-bottom: 7px;
+            font-size: 1.2rem;
+          }
+
+          p {
+            color: #181818;
+            font-size: 14px;
+          }
+          .profile__contacts {
+            display: flex;
+            flex-direction: row;
+            // align-items: center;
+            margin-top: 5px;
+            grid-gap: 20px;
+            // border: 1px solid #000;
+
+            p {
+              font-size: 14px;
+              font-weight: 700;
+            }
+
+            h3 {
+              color: $primaryColor;
+              font-size: 14px;
+              cursor: pointer;
+              transition: all 0.3s ease-in;
+              border-bottom: 1px solid transparent;
+
+              &:hover {
+                border-bottom: 1px solid $primaryColor;
+              }
+            }
+          }
+        }
+
+        .profile__right {
+          // border: 1px solid #000;
+          text-align: right;
+          // padding-left: 20px;
+
+          .fa {
+            font-size: 20px;
+            color: $primaryColor;
+            margin-right: 5px;
+          }
+
+          p {
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .experience__wrapper {
+      box-shadow: 0px 0px 5px 0px rgba($color: #000000, $alpha: 0.5);
+      background: #fff;
+      border-radius: 2px;
+      width: 100%;
+      padding: 30px 0px 10px;
+      margin: 1rem 0;
+
+      .profile__title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.1rem;
+        justify-content: space-between;
+        padding: 0px 40px;
+
+        h1 {
+          font-weight: 600;
+          font-size: 20px;
+        }
+
+        .fa {
+          color: $primaryColor;
+          cursor: pointer;
+          transition: all 0.3s ease-in;
+
+          &:hover {
+            transform: scale(1.5) rotate(90deg);
+            opacity: 0.7;
+          }
+        }
+      }
+
+      .experience__item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        grid-gap: 40px;
+        margin: 1rem 0;
+        border-bottom: 1px solid #aaa;
+        padding: 0 40px 15px;
+
+        &:last-child {
+          border-bottom: 1px solid transparent;
+        }
+
+        &:hover .experience__info > .experience__title > .fa {
+          opacity: 1;
+        }
+
+        .fa {
+          font-size: 40px;
+          color: #555;
+          // margin-left: 20px;
+        }
+
+        .experience__info {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          // border: 1px solid #000;
+
+          .experience__title {
+            display: flex;
+            flex-direction: row;
+            align-items: center !important;
+            justify-content: space-between;
+            width: 100%;
+            // border: 1px solid #000;
+
+            h4 {
+              font-size: 16px;
+              font-weight: 700;
+              color: #181818;
+            }
+
+            .fa {
+              font-size: 16px;
+              color: $primaryColor;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              opacity: 0;
+            }
+          }
+
+          .experience__job {
+            color: #181818;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.1;
+          }
+
+          .experience__location,
+          time {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.1;
+          }
+
+          .experience__desc {
+            font-size: 14px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .education__wrapper {
+      box-shadow: 0px 0px 5px 0px rgba($color: #000000, $alpha: 0.5);
+      background: #fff;
+      border-radius: 2px;
+      width: 100%;
+      padding: 30px 0px 10px;
+      margin: 1rem 0;
+
+      .profile__title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.1rem;
+        justify-content: space-between;
+        padding: 0px 40px;
+
+        h1 {
+          font-weight: 600;
+          font-size: 20px;
+        }
+
+        .fa {
+          color: $primaryColor;
+          cursor: pointer;
+          transition: all 0.3s ease-in;
+
+          &:hover {
+            transform: scale(1.5) rotate(90deg);
+            opacity: 0.7;
+          }
+        }
+      }
+
+      .education__item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        grid-gap: 40px;
+        margin: 1rem 0;
+        border-bottom: 1px solid #aaa;
+        padding: 0 40px 15px;
+
+        &:last-child {
+          border-bottom: 1px solid transparent;
+        }
+
+        &:hover .education__info > .education__title > .fa {
+          opacity: 1;
+        }
+
+        .fa {
+          font-size: 40px;
+          color: #555;
+          // margin-left: 20px;
+        }
+
+        .education__info {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          // border: 1px solid #000;
+
+          .education__title {
+            display: flex;
+            flex-direction: row;
+            align-items: center !important;
+            justify-content: space-between;
+            width: 100%;
+            // border: 1px solid #000;
+
+            h4 {
+              font-size: 16px;
+              font-weight: 700;
+              color: #181818;
+            }
+
+            .fa {
+              font-size: 16px;
+              color: $primaryColor;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              opacity: 0;
+            }
+          }
+
+          .education__degree {
+            color: #181818;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.1;
+          }
+
+          time {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.1;
+          }
+
+          .education__desc {
+            font-size: 14px;
+            margin-top: 5px;
+          }
+        }
+      }
     }
   }
 }

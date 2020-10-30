@@ -1,18 +1,32 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { connect } from "react-redux";
+import { fetchProfile } from "../../redux/actions/profile";
+import { fetchProfile as userProfile } from "../../redux/actions/profiles";
+import ProfileUI from "../../layouts/ProfileUI";
 
-const UserProfileComp = () => {
-  const path = useLocation();
+const UserProfileComp = ({ userProfile, user, fetchProfile }) => {
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    console.log(path);
+    fetchProfile(pathname);
+  }, [pathname]);
+
+  useEffect(() => {
+    {
+      if (user.data == null) {
+        userProfile();
+      }
+    }
   }, []);
 
-  return (
-    <div>
-      <h3>User Profile</h3>
-    </div>
-  );
+  return <ProfileUI user={user.data} />;
 };
 
-export default UserProfileComp;
+const mapStateToProps = (state) => ({
+  user: state.profileState,
+});
+
+export default connect(mapStateToProps, { fetchProfile, userProfile })(
+  UserProfileComp
+);
