@@ -22,6 +22,13 @@
   border: 1px solid #f4f4f4;
   font-weight: 600; }
 
+.btn-dark {
+  border: 1px solid #555;
+  color: #555; }
+  .btn-dark:hover {
+    background: #555;
+    color: #fff; }
+
 .btn-primary-outline {
   border: 1px solid #0e82b0;
   color: #0e82b0;
@@ -44,6 +51,27 @@
   width: 100%;
   height: 1px;
   background: #b9b6b6; }
+
+.fa-circle-o-notch {
+  -webkit-animation: spin 1s infinite;
+  animation: spin 1s infinite;
+  height: 15px; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 .modal {
   position: fixed;
@@ -1158,6 +1186,203 @@ a {
   .profile__page .profile__wrapper {
     width: 55%;
     margin: 7% auto; }
+    .profile__page .profile__wrapper .editProfile {
+      background: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 60%;
+      margin: 2rem auto;
+      border-radius: 2px; }
+      .profile__page .profile__wrapper .editProfile .editProfile__title {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 10px 20px; }
+        .profile__page .profile__wrapper .editProfile .editProfile__title h2 {
+          font-size: 18px;
+          font-weight: 600; }
+        .profile__page .profile__wrapper .editProfile .editProfile__title .fa {
+          font-size: 20px;
+          -webkit-transition: all 0.2s ease-out;
+          -o-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
+          cursor: pointer; }
+          .profile__page .profile__wrapper .editProfile .editProfile__title .fa:hover {
+            -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2); }
+      .profile__page .profile__wrapper .editProfile .editProfile__imgs {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; }
+        .profile__page .profile__wrapper .editProfile .editProfile__imgs .editProfile__bg_img {
+          width: 100%;
+          height: 200px;
+          position: relative;
+          z-index: 1; }
+          .profile__page .profile__wrapper .editProfile .editProfile__imgs .editProfile__bg_img img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover; }
+          .profile__page .profile__wrapper .editProfile .editProfile__imgs .editProfile__bg_img .bg__icon {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #0e82b0;
+            background: #f4f4f4;
+            height: 30px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            z-index: 3;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; }
+            .profile__page .profile__wrapper .editProfile .editProfile__imgs .editProfile__bg_img .bg__icon:hover {
+              background: #35baef;
+              color: #f4f4f4; }
+        .profile__page .profile__wrapper .editProfile .editProfile__imgs .editProfile__dp_img {
+          height: 100px;
+          width: 100px;
+          border-radius: 50%;
+          margin: -50px 0 0 40px;
+          z-index: 3;
+          position: relative; }
+          .profile__page .profile__wrapper .editProfile .editProfile__imgs .editProfile__dp_img img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid #f4f4f4;
+            -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); }
+          .profile__page .profile__wrapper .editProfile .editProfile__imgs .editProfile__dp_img .dp__icon {
+            position: absolute;
+            bottom: 10px;
+            -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+            right: 0px;
+            color: #0e82b0;
+            background: #f4f4f4;
+            z-index: 3;
+            height: 25px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; }
+            .profile__page .profile__wrapper .editProfile .editProfile__imgs .editProfile__dp_img .dp__icon:hover {
+              background: #12a5df;
+              color: #f4f4f4; }
+      .profile__page .profile__wrapper .editProfile .form-group {
+        margin: 10px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        grid-gap: 10px; }
+        .profile__page .profile__wrapper .editProfile .form-group .form-group__item {
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-align: start;
+          -ms-flex-align: start;
+          align-items: flex-start; }
+          .profile__page .profile__wrapper .editProfile .form-group .form-group__item label {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 3px 0; }
+            .profile__page .profile__wrapper .editProfile .form-group .form-group__item label span {
+              color: #0e82b0; }
+          .profile__page .profile__wrapper .editProfile .form-group .form-group__item input,
+          .profile__page .profile__wrapper .editProfile .form-group .form-group__item textarea,
+          .profile__page .profile__wrapper .editProfile .form-group .form-group__item select {
+            width: 100%;
+            padding: 5px 7px;
+            font-size: 14px;
+            border: 1px solid #555;
+            outline: none;
+            border-radius: 2px; }
+      .profile__page .profile__wrapper .editProfile .textarea {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        padding: 5px 10px; }
+        .profile__page .profile__wrapper .editProfile .textarea label {
+          font-size: 14px;
+          font-weight: normal;
+          margin: 3px 0; }
+          .profile__page .profile__wrapper .editProfile .textarea label span {
+            color: #0e82b0; }
+        .profile__page .profile__wrapper .editProfile .textarea textarea {
+          width: 100%;
+          height: 60px;
+          border: 1px solid #555;
+          border-radius: 2px;
+          outline: none;
+          padding: 3px 7px;
+          font-size: 15px;
+          font-family: inherit; }
+      .profile__page .profile__wrapper .editProfile .editProfile__footer {
+        margin: 20px 10px;
+        text-align: right; }
+        .profile__page .profile__wrapper .editProfile .editProfile__footer .btn {
+          font-size: 14px;
+          padding: 5px 20px; }
+        .profile__page .profile__wrapper .editProfile .editProfile__footer .btn-primary {
+          color: #f4f4f4;
+          margin-left: 10px;
+          padding: 5px 20px !important; }
     .profile__page .profile__wrapper .profile__header {
       background: #fff;
       width: 100%;

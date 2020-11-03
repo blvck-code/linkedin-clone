@@ -1,12 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
 import Education from "../containers/education/index";
 import Experience from "../containers/experience/index";
+import EditProfile from "./modals/EditProfile";
 import Header from "./Profile/Header";
 
-const ProfileUI = ({ user }) => {
+const ProfileUI = ({ user, profile: { loading, data, error } }) => {
   return (
     <div className="profile__page">
       <div className="profile__wrapper">
+        <EditProfile data={data} />
         <Header user={user} />
         <Experience />
         <Education />
@@ -15,4 +18,8 @@ const ProfileUI = ({ user }) => {
   );
 };
 
-export default ProfileUI;
+const mapStateToProps = (state) => ({
+  profile: state.authorProfile,
+});
+
+export default connect(mapStateToProps)(ProfileUI);

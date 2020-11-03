@@ -2,22 +2,33 @@ import React, { useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../redux/actions/auth";
-import searchPost from "../redux/actions/searchPost";
+import { searchPosts, fetchPosts } from "../redux/actions/posts";
 import img from "../assets/images/default.png";
 
-const Header = ({ auth: { data }, logout, searchPost }) => {
+const Header = ({ auth: { data }, logout, searchPosts, fetchPosts }) => {
   const { pathname } = useLocation();
 
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState(null);
 
   const history = useHistory();
 
   const onChange = (e) => {
     setSearchValue(e.target.value);
 
-    const searchText = searchValue.trim().replace(/" "/g, "");
+    // const searchText = searchValue.trim().replace(/" "/g, "");
+  };
 
-    searchPost(searchText);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (pathname != "/") {
+      history.push("/");
+    }
+
+    if (searchValue === null) {
+      fetchPosts();
+    } else if (searchValue !== null) {
+      searchPosts(searchValue);
+    }
   };
 
   const guestLinks = (
@@ -48,12 +59,14 @@ const Header = ({ auth: { data }, logout, searchPost }) => {
         </Link>
         <div className="search">
           <i className="fa fa-search" />
-          <input
-            value={searchValue}
-            onChange={onChange}
-            type="text"
-            placeholder="Search"
-          />
+          <form onSubmit={onSubmit}>
+            <input
+              value={searchValue}
+              onChange={onChange}
+              type="text"
+              placeholder="Search"
+            />
+          </form>
         </div>
       </div>
       <div className="menu">
@@ -89,4 +102,6 @@ const mapStateToProps = (state) => ({
   auth: state.authState,
 });
 
-export default connect(mapStateToProps, { logout, searchPost })(Header);
+export default connect(mapStateToProps, { logout, searchPosts, fetchPosts })(
+  Header
+);

@@ -4,28 +4,22 @@ import { Prompt } from "react-router-dom";
 import { createPost } from "../../redux/actions/posts";
 // import img from "../../assets/images/img.jpg";
 
-const UpdatePostModal = ({ data }) => {
+const UpdatePostModal = ({ update }) => {
   const [body, setBody] = useState("");
   const [img, setImg] = useState(null);
 
   useEffect(() => {
+    console.log(update);
+  }, []);
+
+  useEffect(() => {
     setTimeout(() => {
-      if (data) {
-        setBody(data.body);
-        setImg(data.img);
+      if (update) {
+        setBody(update.body);
+        setImg(update.img);
       }
     }, 600);
   }, []);
-
-  const clickOutside = (e) => {
-    if (e.target === document.querySelector(".modal")) {
-      document.querySelector(".modal").style.display = "none";
-    } else if (e.target === document.querySelector("#createPost")) {
-      document.getElementById("createPost").style.display = "none";
-    }
-  };
-
-  window.addEventListener("click", clickOutside);
 
   const imagePickerRef = useRef(null);
 
@@ -60,6 +54,16 @@ const UpdatePostModal = ({ data }) => {
     setImg(null);
   };
 
+  const clickOutside = (e) => {
+    if (e.target === document.querySelector(".modal")) {
+      document.querySelector(".modal").style.display = "none";
+    } else if (e.target === document.querySelector("#updatePost")) {
+      document.getElementById("updatePost").style.display = "none";
+    }
+  };
+
+  window.addEventListener("click", clickOutside);
+
   return (
     <>
       {/* <Prompt
@@ -83,12 +87,12 @@ const UpdatePostModal = ({ data }) => {
             <textarea
               autoFocus="true"
               placeholder="What do you want to talk about?"
-              value={data.body}
+              value={update.body}
               onChange={(e) => setBody(e.target.value)}
             />
             {img && (
               <div className="updatePost__img">
-                <img onClick={choseImage} src={data.img} />
+                <img onClick={choseImage} src={update.img} />
               </div>
             )}
             <div className="updatePost__footer">

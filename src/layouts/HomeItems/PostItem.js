@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Moment from "react-moment";
 import { useHistory } from "react-router-dom";
 import Update from "../modals/Update";
@@ -7,11 +7,9 @@ const PostItem = ({ post, imgModal, auth, deletePost }) => {
   const history = useHistory();
   const [update, setUpdate] = useState({});
 
-  // const userProfile = (url) => {
-  //   history.push(`/${url}`);
-  // };
+  console.log(update);
 
-  const updateModal = (data) => {
+  const updateModal = () => {
     document.getElementById("updatePost").style.display = "block";
     // <Update data={update} />;
     // document.getElementById("createPost").style.display = "block";
@@ -19,9 +17,14 @@ const PostItem = ({ post, imgModal, auth, deletePost }) => {
     // return image;
   };
 
+  const handleUpdate = (data) => {
+    setUpdate(data);
+    updateModal();
+  };
+
   return (
     <div className="post__item">
-      <Update data={update} />
+      <Update update={update} />
       <div className="author">
         <div className="author__dp">
           <img onClick={() => history.push(`/${post.profile}`)} src={post.dp} />
@@ -32,7 +35,7 @@ const PostItem = ({ post, imgModal, auth, deletePost }) => {
           </h4>
           <p>{post.profession}</p>
           <small className="date-posted">
-            <Moment start="day" fromNow>
+            <Moment format="MMMM Do YYYY">
               <time>{post.date_updated}</time>
             </Moment>{" "}
             <i className="fa fa-globe"></i>
@@ -42,8 +45,7 @@ const PostItem = ({ post, imgModal, auth, deletePost }) => {
           <div className="post__btns">
             <button
               onClick={() => {
-                updateModal();
-                setUpdate(post);
+                handleUpdate(post);
               }}
               className="btn btn-primary-outline">
               Edit

@@ -647,6 +647,198 @@ a {
     width: 55%;
     margin: 7% auto;
 
+    .editProfile {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      margin: 2rem auto;
+      border-radius: 2px;
+
+      .editProfile__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+
+        h2 {
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        .fa {
+          font-size: 20px;
+          transition: all 0.2s ease-out;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      .editProfile__imgs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .editProfile__bg_img {
+          width: 100%;
+          height: 200px;
+          position: relative;
+          z-index: 1;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .bg__icon {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: $primaryColor;
+            background: $lightBg;
+            height: 30px;
+            display: flex;
+            z-index: 3;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              // background: $primaryColor;
+              background: lighten($color: $primaryColor, $amount: 20%);
+              color: $lightBg;
+            }
+          }
+        }
+
+        .editProfile__dp_img {
+          height: 100px;
+          width: 100px;
+          border-radius: 50%;
+          margin: -50px 0 0 40px;
+          z-index: 3;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid $lightBg;
+            box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
+          }
+          .dp__icon {
+            position: absolute;
+            bottom: 10px;
+            box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
+            right: 0px;
+            color: $primaryColor;
+            background: $lightBg;
+            z-index: 3;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              background: lighten($color: $primaryColor, $amount: 10%);
+              color: $lightBg;
+            }
+          }
+        }
+      }
+
+      .form-group {
+        margin: 10px;
+        display: flex;
+        grid-gap: 10px;
+
+        .form-group__item {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          label {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 3px 0;
+
+            span {
+              color: $primaryColor;
+            }
+          }
+
+          input,
+          textarea,
+          select {
+            width: 100%;
+            padding: 5px 7px;
+            font-size: 14px;
+            border: 1px solid #555;
+            outline: none;
+            border-radius: 2px;
+          }
+        }
+      }
+
+      .textarea {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        // border: 1px solid #000;
+        padding: 5px 10px;
+
+        label {
+          font-size: 14px;
+          font-weight: normal;
+          margin: 3px 0;
+
+          span {
+            color: $primaryColor;
+          }
+        }
+
+        textarea {
+          width: 100%;
+          height: 60px;
+          border: 1px solid #555;
+          border-radius: 2px;
+          outline: none;
+          padding: 3px 7px;
+          font-size: 15px;
+          font-family: inherit;
+        }
+      }
+
+      .editProfile__footer {
+        margin: 20px 10px;
+        text-align: right;
+
+        .btn {
+          font-size: 14px;
+          padding: 5px 20px;
+        }
+
+        .btn-primary {
+          color: $lightBg;
+          margin-left: 10px;
+          padding: 5px 20px !important;
+        }
+      }
+    }
+
     .profile__header {
       background: #fff;
       width: 100%;

@@ -2,6 +2,8 @@ import {
   GET_EXPERIENCE_ERROR,
   GET_EXPERIENCE_LOAD,
   GET_EXPERIENCE_SUCCESS,
+  UPDATE_EXPERIENCE_ERROR,
+  UPDATE_EXPERIENCE_SUCCESS,
 } from "../../constants/types";
 
 const initialState = {
@@ -28,6 +30,7 @@ export default function (state = initialState, { type, payload }) {
         },
       };
     case GET_EXPERIENCE_SUCCESS:
+    case UPDATE_EXPERIENCE_SUCCESS:
       return {
         ...state,
         experience: {
@@ -37,6 +40,7 @@ export default function (state = initialState, { type, payload }) {
         },
       };
     case GET_EXPERIENCE_ERROR:
+    case UPDATE_EXPERIENCE_ERROR:
       return {
         ...state,
         experience: {

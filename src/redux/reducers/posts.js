@@ -8,15 +8,19 @@ import {
   CREATE_POSTS_LOADING,
   CREATE_POSTS_LOAD_SUCCESS,
   CREATE_POSTS_LOAD_ERROR,
+  SEARCH_LOAD_ERROR,
+  SEARCH_LOAD_SUCCESS,
+  ADD_POSTS_SUCCESS,
 } from "../../constants/types";
 
 const initialState = {
   posts: {
     loading: false,
-    data: null,
+    data: [],
+    previous: "",
+    next: "",
     error: null,
-    isSearchActive: false,
-    foundPosts: [],
+    count: null,
   },
   addPost: {
     loading: false,
@@ -41,11 +45,38 @@ export default function (state = initialState, { type, payload }) {
         posts: {
           ...state.posts,
           loading: false,
-          data: payload,
+          data: payload.results,
+          next: payload.next,
+          count: payload.count,
+          previous: payload.previous,
+          error: null,
+        },
+      };
+    case ADD_POSTS_SUCCESS:
+      return {
+        ...state,
+        posts: {
+          ...state.posts,
+          loading: false,
+          data: [...state.posts.data, payload.results],
+          next: payload.next,
+          count: payload.count,
+          error: null,
+        },
+      };
+    case SEARCH_LOAD_SUCCESS:
+      return {
+        ...state,
+        posts: {
+          ...state.posts,
+          loading: false,
+          data: payload.results,
+          next: payload.next,
           error: null,
         },
       };
     case POSTS_LOAD_ERROR:
+    case SEARCH_LOAD_ERROR:
       return {
         ...state,
         posts: {
@@ -61,25 +92,8 @@ export default function (state = initialState, { type, payload }) {
         posts: {
           ...state.posts,
           loading: false,
-          data: state.posts.data.filter((post) => post.id !== payload),
+          data: state.posts.data.filter((post) => post.slug !== payload),
           error: null,
-        },
-      };
-    case SEARCH_POST:
-      const searchValue = payload.toLowerCase();
-      return {
-        ...state,
-        posts: {
-          ...state.posts,
-          loading: false,
-          isSearchActive: payload.length > 0 || false,
-          foundPosts: state.posts.data.filter((item) => {
-            return (
-              item?.body.toLowerCase().search(searchValue) !== -1 ||
-              item?.author.toLowerCase().search(searchValue) !== -1 ||
-              item?.profession.toLowerCase().search(searchValue) !== -1
-            );
-          }),
         },
       };
     case LOGOUT_SUCCESS:
